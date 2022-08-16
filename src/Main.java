@@ -1,10 +1,32 @@
 import bad.MultipleResponsibilityText;
+import bad.openclosed.ClaimApprovalManager;
+import bad.openclosed.HealthInsuranceSurveyor;
+import bad.openclosed.VehicleInsuranceSurveyor;
 import good.Printer;
 import good.SingleResponsibilityText;
+import good.openclosed.InsuranceSurveyor;
 
 public class Main {
     public static void main(String[] args) {
-        runSingleResponsibility();
+        runGoodClaimApproval();
+    }
+
+    static void runGoodClaimApproval() {
+        InsuranceSurveyor surveyor1 = new good.openclosed.HealthInsuranceSurveyor();
+        var claimApprovalManager = new good.openclosed.ClaimApprovalManager();
+        claimApprovalManager.processClaim(surveyor1);
+        // vehicle
+        InsuranceSurveyor surveyor2 = new good.openclosed.VehicleInsuranceSurveyor();
+        claimApprovalManager.processClaim(surveyor2);
+    }
+
+    static void runBadClaimApproval() {
+        HealthInsuranceSurveyor healthInsuranceSurveyor = new HealthInsuranceSurveyor();
+        ClaimApprovalManager claimApprovalManager = new ClaimApprovalManager();
+        claimApprovalManager.processHealthClaim(healthInsuranceSurveyor);
+        // vehicle
+        VehicleInsuranceSurveyor vehicleInsuranceSurveyor = new VehicleInsuranceSurveyor();
+        claimApprovalManager.processVehicleClaim(vehicleInsuranceSurveyor);
     }
 
     static void runMultipleResponsibility() {
