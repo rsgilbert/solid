@@ -1,11 +1,9 @@
 package good.liskov;
 
-/**
- * A transportation device does not need to have an engine..
- */
 public class TransportationDevice {
     private String name;
     private double speed;
+    private Engine engine;
 
     public String getName() {
         return name;
@@ -23,5 +21,15 @@ public class TransportationDevice {
         this.speed = speed;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
 
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void startEngine() {
+
+    }
 }

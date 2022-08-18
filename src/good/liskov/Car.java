@@ -1,5 +1,8 @@
 package good.liskov;
 
-public class Car extends TransportationDevice {
+public class Car extends DevicesWithEngines {
+    @Override
+    public void startEngine() {
 
+    }
 }

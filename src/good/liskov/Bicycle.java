@@ -1,13 +1,8 @@
 package good.liskov;
 
-public class Bicycle extends TransportationDevice {
-    /**
-     * This is bad code. A bicycle does not have an engine
-     * so this method startEngine() can not be applied to it.
-     * This is a violation of Liskov Substitution principlr..
-     */
+public class Bicycle extends DevicesWithoutEngines {
     @Override
-    public void startEngine() {
+    public void startMoving() {
 
     }
 }

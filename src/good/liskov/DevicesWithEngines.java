@@ -1,4 +1,4 @@
-package bad.liskov;
+package good.liskov;
 
 public class DevicesWithEngines extends TransportationDevice {
     private Engine engine;
