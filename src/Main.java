@@ -6,6 +6,7 @@ import good.Printer;
 import good.SingleResponsibilityText;
 import good.openclosed.InsuranceSurveyor;
 
+
 public class Main {
     public static void main(String[] args) {
         runGoodClaimApproval();
